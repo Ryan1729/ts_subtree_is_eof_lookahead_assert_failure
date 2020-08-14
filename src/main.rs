@@ -15,5 +15,14 @@ fn main() {
 
     tree = parser.parse(to_parse, tree.as_ref());
 
+    tree.as_mut().unwrap().edit(&InputEdit{
+        start_byte: usize::default(),
+        old_end_byte: usize::default(),
+        new_end_byte: usize::default(),
+        start_position: Point::default(),
+        old_end_position: Point::default(),
+        new_end_position: Point::default(),
+    });
+
     parser.parse(to_parse, tree.as_ref());
 }
